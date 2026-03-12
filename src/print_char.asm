@@ -1,3 +1,6 @@
+SECTION .bss
+char_buffer resb 1
+
 SECTION .text
 global print_char
 
@@ -18,6 +21,14 @@ print_char:
     ; 3. Imprimir 1 byte
 
     ; write(fd=1, buffer, 1)
+
+    mov [char_buffer], al
+
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, char_buffer
+    mov edx, 1
+    int 0x80
 
     mov esp, ebp
     pop ebp
