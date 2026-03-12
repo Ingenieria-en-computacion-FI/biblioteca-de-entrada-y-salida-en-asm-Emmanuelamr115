@@ -4,7 +4,6 @@ buffer_int resb 12
 SECTION .text
 global scan_int
 
-
 ; -------------------------
 ; scan_int
 ; Lee entero del teclado y devuelve en EAX
